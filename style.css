@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+html {
+  min-height: 100%;
+}
+
+body,
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Anton", sans-serif;
+  font-size: 32px;
+  /* color: #fff; */
+  /* background-color: #000; */
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* ____________ Slider text ____________ */
+/* ____________ Slider text ____________ */
+.slider-text {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  clip-path: inset(25% 0% 50% 0%);
+  /* -webkit-text-stroke: 2px white; */
+  /* border: 4px dashed lightcyan; */
+}
+
+.slider-text-stroke {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  /* border: 4px dashed lightpink; */
+}
+
+.slider-text-stroke-color {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  /* border: 4px dashed lightpink; */
+}
+
+.slider__text_holder {
+  width: 100%;
+  /* Sets the height of the element to be the minimum size required to contain its content */
+  height: min-content;
+  position: relative;
+  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.slider-text-stroke-color.clip {
+  clip-path: inset(10% 0% 10% 0%);
+}
+
+.slider__text_holder.reseting {
+  transition: transform 0s ease-in-out;
+}
+
+.slider__text_each {
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  /* color: transparent; */
+  font-size: 11vw;
+  font-weight: 400;
+  /* border: 1px dashed palevioletred; */
+}
+
+.slider__text_each.stroke-blue {
+  color: transparent;
+  -webkit-text-stroke: 2px #438bd8;
+  /* border: 1px dashed palevioletred; */
+}
+
+.slider__text_each.stroke-white {
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+  /* mix-blend-mode: difference; */
+  /* border: 1px dashed palevioletred; */
+}
+
+/* ____________ Slider img ____________ */
+/* ____________ Slider img ____________ */
+.slider-img {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-color: black;
+  /* border: 4px dashed lightgreen; */
+  clip-path: inset(10% 15% 10% 15%);
+}
+
+.slider__img_holder {
+  width: 100%;
+  /* Sets the height of the element to be the minimum size required to contain its content */
+  height: min-content;
+  position: relative;
+  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+  display: flex;
+}
+
+.slider__img_holder li img {
+  filter: brightness(1) contrast(1.1);
+}
+
+.slider__img_holder.reseting {
+  transition: transform 0s ease-in-out;
+}
+
+.slider__img_each {
+  /* This sets the flex-grow to 0, flex-shrink to 0, and flex-basis to 100vw, effectively making each image take the full width of the viewport without growing or shrinking. */
+  flex: 0 0 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  /* clip-path: inset(10% 10% 10% 10%); */
+}
+
+.slider__img_each img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.slider__img_each.slide_5 {
+  transform: translate(-12%, 9%);
+}
+
+/* ____________ Slider buttons ____________ */
+/* ____________ Slider buttons ____________ */
+.trgs {
+  position: fixed;
+  z-index: 9;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 0.5em;
+  z-index: 99;
+  /* background-color: transparent; */
+  /* border: 1px dashed palevioletred; */
+}
+
+/* .trgs button {
+  background: palevioletred;
+  font-size: 14px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+} */
+
+.trgs svg {
+  transform: scale(1);
+}
+
+.trg.prev,
+.trg.next {
+  border: 1px solid #438bd8;
+  border-radius: 50%;
+  /* padding: 0.1em; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
